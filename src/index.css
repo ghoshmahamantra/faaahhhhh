@@ -1,0 +1,305 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Montserrat", system-ui, -apple-system, sans-serif;
+  --font-arabic: "Amiri", Georgia, serif;
+
+  --color-parchment: #f7e8d2;
+  --color-parchment-light: #fcf4e6;
+  --color-parchment-deep: #edd6b5;
+  --color-maroon: #470718;
+  --color-maroon-mid: #680d26;
+  --color-maroon-dark: #320310;
+  --color-gold: #c49746;
+  --color-gold-light: #e8cf95;
+  --color-gold-dark: #8c6323;
+  --color-ink: #3c141c;
+  --color-muted: #6e4a44;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  background-color: #f7e8d2;
+  color: #3c141c;
+  overflow-x: clip;
+}
+
+body {
+  margin: 0;
+  overflow-x: clip;
+  background-color: #f7e8d2;
+}
+
+/* Deep Imperial Royal Maroon Damask Wallpaper (matching Shahi Patra doors & ceremony court) */
+.shahi-maroon-damask {
+  background-color: #4a081a;
+  background-image:
+    radial-gradient(circle at 50% 0%, rgba(126, 22, 50, 0.34) 0%, transparent 65%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='76' height='76' viewBox='0 0 76 76'%3E%3Cg fill='%237e1532' fill-opacity='0.28'%3E%3Cpath d='M38 12 C41 20 46 25 38 34 C30 25 35 20 38 12 Z'/%3E%3Cpath d='M38 35 C44 37 49 43 44 50 C41 46 39 44 38 44 C37 44 35 46 32 50 C27 43 32 37 38 35 Z'/%3E%3Ccircle cx='38' cy='58' r='2.2'/%3E%3Cpath d='M0 50 C5 52 8 56 5 61 L0 58 Z M76 50 C71 52 68 56 71 61 L76 58 Z'/%3E%3Cpath d='M38 0 L41 4 L38 8 L35 4 Z'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: auto, 76px 76px;
+}
+
+/* Far-side Beaded Maroon Wallpaper Border Rail (Screenshot 1 side margins) */
+.shahi-maroon-beaded-rail {
+  background-color: #410616;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='22' viewBox='0 0 18 22'%3E%3Ccircle cx='9' cy='11' r='2' fill='%23c49746' fill-opacity='0.65'/%3E%3Cpath d='M9 3 L11 6 L9 9 L7 6 Z' fill='%23c49746' fill-opacity='0.35'/%3E%3C/svg%3E");
+  background-size: 18px 22px;
+}
+
+/* Warm Antique Sandstone Parchment with subtle Mughal Buta Damask */
+.shahi-parchment {
+  background-color: #f6e7d0;
+  background-image:
+    radial-gradient(circle at 50% 10%, rgba(255, 250, 240, 0.55) 0%, transparent 55%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='88' viewBox='0 0 88 88'%3E%3Cg fill='%23c49746' fill-opacity='0.095'%3E%3Cpath d='M44 16 C47 24 52 29 44 39 C36 29 41 24 44 16 Z'/%3E%3Cpath d='M44 40 C51 42 55 48 50 55 C47 51 45 49 44 49 C43 49 41 51 38 55 C33 48 37 42 44 40 Z'/%3E%3Ccircle cx='44' cy='64' r='2.1'/%3E%3Cpath d='M44 4 L47 8 L44 12 L41 8 Z'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: auto, 88px 88px;
+}
+
+/* Subtle Floral Botanical Wallpaper for 3D Hanging Frames Wall (Screenshot 6) */
+.shahi-floral-wall {
+  background-color: #f5e6cf;
+  background-image:
+    radial-gradient(circle at 50% 25%, rgba(255, 249, 238, 0.65) 0%, transparent 68%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220' viewBox='0 0 220 220'%3E%3Cg fill='none' opacity='0.22'%3E%3Cpath d='M48 82 Q52 54 62 34' stroke='%236d7c58' stroke-width='1.5'/%3E%3Cpath d='M54 62 Q42 56 38 64 Q48 68 54 62 Z' fill='%236d7c58'/%3E%3Cpath d='M58 50 Q70 44 74 52 Q64 56 58 50 Z' fill='%236d7c58'/%3E%3Ccircle cx='63' cy='32' r='6' fill='%23c66c74'/%3E%3Ccircle cx='63' cy='32' r='2.5' fill='%23f2c4be'/%3E%3Cpath d='M165 182 Q162 152 154 132' stroke='%236d7c58' stroke-width='1.5'/%3E%3Cpath d='M160 162 Q172 156 176 164 Q166 168 160 162 Z' fill='%236d7c58'/%3E%3Ccircle cx='153' cy='130' r='5.5' fill='%23c66c74'/%3E%3Ccircle cx='153' cy='130' r='2.2' fill='%23f2c4be'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: auto, 260px 260px;
+}
+
+/* 3D Origami Folding Doors Stage */
+.shahi-origami-stage {
+  perspective: 1800px;
+  perspective-origin: 50% 50%;
+}
+
+.shahi-origami-wing-left {
+  transform-origin: left center;
+  transform-style: preserve-3d;
+  transition:
+    transform 1.35s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.9s ease 0.45s;
+  will-change: transform, opacity;
+}
+
+.shahi-origami-wing-left.is-open {
+  transform: rotateY(-102deg) translateZ(-40px);
+  opacity: 0;
+}
+
+.shahi-origami-wing-right {
+  transform-origin: right center;
+  transform-style: preserve-3d;
+  transition:
+    transform 1.35s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.9s ease 0.45s;
+  will-change: transform, opacity;
+}
+
+.shahi-origami-wing-right.is-open {
+  transform: rotateY(102deg) translateZ(-40px);
+  opacity: 0;
+}
+
+.shahi-origami-leaf-inner-left {
+  transform-origin: left center;
+  transition: transform 1.05s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.shahi-origami-wing-left.is-open .shahi-origami-leaf-inner-left {
+  transform: rotateY(48deg);
+}
+
+.shahi-origami-leaf-inner-right {
+  transform-origin: right center;
+  transition: transform 1.05s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.shahi-origami-wing-right.is-open .shahi-origami-leaf-inner-right {
+  transform: rotateY(-48deg);
+}
+
+.shahi-origami-center-top {
+  transform-origin: top center;
+  transition:
+    transform 0.85s cubic-bezier(0.32, 0, 0.24, 1),
+    opacity 0.6s ease 0.2s;
+  will-change: transform, opacity;
+}
+
+.shahi-origami-center-top.is-open {
+  transform: rotateX(92deg) translateY(-14%);
+  opacity: 0;
+}
+
+.shahi-origami-center-bottom {
+  transform-origin: bottom center;
+  transition:
+    transform 0.85s cubic-bezier(0.32, 0, 0.24, 1),
+    opacity 0.6s ease 0.2s;
+  will-change: transform, opacity;
+}
+
+.shahi-origami-center-bottom.is-open {
+  transform: rotateX(-92deg) translateY(14%);
+  opacity: 0;
+}
+
+/* Ornate Mughal Cartouche Button (matching Shahi Patra "Tap to open") */
+.shahi-cartouche-btn {
+  background: linear-gradient(180deg, #7f0d2f 0%, #5e0720 55%, #470517 100%);
+  border: 1.5px solid #d9b061;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 232, 185, 0.38),
+    0 6px 18px -6px rgba(56, 5, 18, 0.55);
+  clip-path: polygon(
+    14px 0%,
+    calc(100% - 14px) 0%,
+    100% 50%,
+    calc(100% - 14px) 100%,
+    14px 100%,
+    0% 50%
+  );
+}
+
+.shahi-cartouche-btn:hover {
+  background: linear-gradient(180deg, #911237 0%, #6d0b27 60%, #52061b 100%);
+}
+
+/* Ornate Scalloped Maroon Plaque for Save The Date (Screenshot 3) */
+.shahi-date-plaque {
+  background: radial-gradient(circle at 50% 35%, #750d2a 0%, #55071c 68%, #410415 100%);
+  border: 2px solid #d6ad5e;
+  box-shadow:
+    inset 0 0 0 2px rgba(246, 224, 174, 0.22),
+    0 18px 34px -14px rgba(56, 6, 20, 0.55);
+  border-radius: 28px;
+}
+
+/* Gentle continuous compositor-only animations */
+@keyframes slowArchZoom {
+  0% {
+    transform: scale(1.0);
+  }
+  50% {
+    transform: scale(1.045);
+  }
+  100% {
+    transform: scale(1.0);
+  }
+}
+
+.animate-arch-zoom {
+  animation: slowArchZoom 26s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes letterSoftReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(7px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-letter-reveal {
+  opacity: 0;
+  animation: letterSoftReveal 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes tasselFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(-1.5deg);
+  }
+  50% {
+    transform: translateY(6px) rotate(1.5deg);
+  }
+}
+
+.animate-tassel-float {
+  animation: tasselFloat 2.6s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes scrollDownBounce {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.85;
+  }
+  50% {
+    transform: translateY(6px);
+    opacity: 1;
+  }
+}
+
+.animate-scroll-arrow {
+  animation: scrollDownBounce 2.1s ease-in-out infinite;
+}
+
+@keyframes sparkleTwinkle {
+  0%, 100% {
+    opacity: 0.25;
+    transform: scale(0.75);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.15);
+  }
+}
+
+.animate-sparkle {
+  animation: sparkleTwinkle 3.2s ease-in-out infinite;
+}
+
+@keyframes routeDash {
+  to {
+    stroke-dashoffset: -48;
+  }
+}
+
+.animate-route-dash {
+  animation: routeDash 2.8s linear infinite;
+}
+
+@keyframes pinRipple {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.75;
+  }
+  100% {
+    transform: scale(2.1);
+    opacity: 0;
+  }
+}
+
+.animate-pin-ripple {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: pinRipple 2.4s ease-out infinite;
+}
+
+.anim-paused,
+.anim-paused * {
+  animation-play-state: paused !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-arch-zoom,
+  .animate-tassel-float,
+  .animate-scroll-arrow,
+  .animate-sparkle,
+  .animate-route-dash,
+  .animate-pin-ripple {
+    animation: none !important;
+  }
+  .shahi-origami-wing-left,
+  .shahi-origami-wing-right,
+  .shahi-origami-center-top,
+  .shahi-origami-center-bottom {
+    transition-duration: 0.25s !important;
+  }
+}
